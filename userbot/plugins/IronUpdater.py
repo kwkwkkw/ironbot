@@ -1,4 +1,4 @@
-#by : scr
+#by : scrz
 import asyncio
 import sys, time, io
 from os import environ, execle, path, remove
