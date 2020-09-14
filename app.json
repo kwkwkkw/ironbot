@@ -31,15 +31,10 @@
       "description": "Fill your Full name or Username like @watefuk",
       "value": ""
     },
-    "ALIVE_IMG": {
-      "description": "Custom your alive image",
-      "value": "",
-      "required": false
-    },
     "EMOJI_SET": {
-      "description": "Custom your EMOJI Menu",
+      "description": "Custom your EMOJI Menu Ex. 🔥 , Whatever u want",
       "value": "",
-      "required": false
+      "required": true
     },    
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
@@ -47,11 +42,6 @@
     },
     "REM_BG_API_KEY": {
       "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
-      "value": "",
-      "required": false
-    },
-    "PMPERMIT_PIC": {
-      "description": "Custom PiC Pm Permit To Show When Some One PM You.",
       "value": "",
       "required": false
     },
