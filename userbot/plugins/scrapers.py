@@ -82,7 +82,7 @@ async def text_to_speech(query):
                 BOTLOG_CHATID, "`Sudah Di Ubah Bro wkwkw`")
         await query.delete()
 
-@register(outgoing=True, pattern=r"^\.trt(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^\.tr(?: |$)([\s\S]*)")
 async def translateme(trans):
     """ For .trt command, translate the given text using Google Translate. """
     translator = Translator()
@@ -93,7 +93,7 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        return await trans.edit("`Give a text or reply to a message to translate!`")
+        return await trans.edit("`Kasih text atau bales pesan untuk translate!`")
 
     try:
         reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
@@ -102,7 +102,7 @@ async def translateme(trans):
 
     source_lan = LANGUAGES[f'{reply_text.src.lower()}']
     transl_lan = LANGUAGES[f'{reply_text.dest.lower()}']
-    reply_text = f"From **{source_lan.title()}**\nTo **{transl_lan.title()}:**\n\n{reply_text.text}"
+    reply_text = f"Source : **{source_lan.title()}**\nKe   : **{transl_lan.title()}**\n\n{reply_text.text}"
 
     await trans.edit(reply_text)
     if BOTLOG:
@@ -112,11 +112,11 @@ async def translateme(trans):
         )
 
 
-@register(pattern=".lang (trt|tts) (.*)", outgoing=True)
+@register(pattern=".lang (tr|tts) (.*)", outgoing=True)
 async def lang(value):
     """ For .lang command, change the default langauge of userbot scrapers. """
     util = value.pattern_match.group(1).lower()
-    if util == "trt":
+    if util == "tr":
         scraper = "Translator"
         global TRT_LANG
         arg = value.pattern_match.group(2).lower()
@@ -138,7 +138,7 @@ async def lang(value):
             return await value.edit(
                 f"`Invalid Language code !!`\n`Available language codes for TTS`:\n\n`{tts_langs()}`"
             )
-    await value.edit(f"`Language for {scraper} changed to {LANG.title()}.`")
+    await value.edit(f"`Bahasa untuk {scraper} ganti menjadi {LANG.title()}.`")
     if BOTLOG:
         await value.client.send_message(
             BOTLOG_CHATID,
