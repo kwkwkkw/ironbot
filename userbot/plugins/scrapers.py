@@ -26,7 +26,7 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
-from userbot import (CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY,
+from userbot import (CMD_HELP, BOTLOG, BOTLOG_CHATID,
                      TEMP_DOWNLOAD_DIRECTORY)
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
@@ -138,7 +138,7 @@ async def lang(value):
             BOTLOG_CHATID,
             f"`Bahasa untuk {scraper} berubah menjadi {LANG.title()}.`")
 
-
+YOUTUBE_API_KEY = "AIzaSyCT8eXHkbJ3N2al7spP69nseRmYk5U1VHU"
 @register(outgoing=True, pattern="^\.yt (.*)")
 async def yt_search(video_q):
     """ For .yt command, do a YouTube search from Telegram. """
