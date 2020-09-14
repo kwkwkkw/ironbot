@@ -42,35 +42,6 @@ CARBONLANG = "auto"
 TTS_LANG = "id"
 TRT_LANG = "id"
 
-@register(outgoing=True, pattern=r"^\.wiki (.*)")
-async def wiki(wiki_q):
-    """ For .wiki command, fetch content from Wikipedia. """
-    match = wiki_q.pattern_match.group(1)
-    try:
-        summary(match)
-    except DisambiguationError as error:
-        return await wiki_q.edit(f"Disambiguated page found.\n\n{error}")
-    except PageError as pageerror:
-        return await wiki_q.edit(f"Page not found.\n\n{pageerror}")
-    result = summary(match)
-    if len(result) >= 4096:
-        file = open("output.txt", "w+")
-        file.write(result)
-        file.close()
-        await wiki_q.client.send_file(
-            wiki_q.chat_id,
-            "output.txt",
-            reply_to=wiki_q.id,
-            caption="`Output too large, sending as file`",
-        )
-        if os.path.exists("output.txt"):
-            return os.remove("output.txt")
-    await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
-    if BOTLOG:
-        await wiki_q.client.send_message(
-            BOTLOG_CHATID, f"Wiki query `{match}` was executed successfully")
-
-
 @register(outgoing=True, pattern=r"^\.tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
     """ For .tts command, a wrapper for Google Text-to-Speech. """
