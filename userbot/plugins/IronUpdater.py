@@ -91,7 +91,9 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 f"{txt}\n" "`Gagal Heroku credentials untuk deploy ironbot dyno.`"
             )
             return repo.__del__()
-        await event.edit("`⚡Deploying ironbot, check .alive jika sudah 5-10min...`")
+        await event.edit(
+            "\n`• Ironbot proses untuk deploy\n• Tunggu 5-10min\n• Coba untuk .alive/.on jika sudah`"
+        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
