@@ -138,11 +138,11 @@ async def lang(value):
             return await value.edit(
                 f"`Invalid Language code !!`\n`Available language codes for TTS`:\n\n`{tts_langs()}`"
             )
-    await value.edit(f"`Bahasa untuk {scraper} ganti menjadi {LANG.title()}.`")
+    await value.edit(f"`Bahasa untuk **{scraper}** berubah menjadi **{LANG.title()}**.`")
     if BOTLOG:
         await value.client.send_message(
             BOTLOG_CHATID,
-            f"`Language for {scraper} changed to {LANG.title()}.`")
+            f"`Bahasa untuk {scraper} berubah menjadi {LANG.title()}.`")
 
 
 @register(outgoing=True, pattern="^\.yt (.*)")
