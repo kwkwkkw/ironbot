@@ -7,7 +7,7 @@ from uniborg.util import admin_cmd
 import asyncio
 from PyLyrics import *
 
-@borg.on(admin_cmd(pattern="ly <artis-judul>"))
+@borg.on(admin_cmd(pattern="ly (.*)"))
 async def _(event):
     if event.fwd_from:
         return
