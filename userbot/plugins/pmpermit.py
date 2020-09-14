@@ -22,7 +22,6 @@ CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else ""
 USER_BOT_WARN_ZERO = "`  Sorry ya ke block , jangan spam makanya.` "
 USER_BOT_NO_WARN = ("`Halo bro! Ini `**Ironbot**\n\n"
                    f"Guru saya {DEFAULTUSER} Mungkin masih sibuk\n"
-                   f"{CUSTOM_MIDDLE_PMP}\n\n"
                     "**Tunggu ya bro..** 🔥")
 
 
