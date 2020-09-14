@@ -5,49 +5,10 @@ from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 from tswift import Song
 import io
-GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
+GENIUS = "UtpWEjKWPfAkuFrC3SmkCpFSHVF2p2bvmR-6029Y4M6rCnDBJCGFKrOzUh-D1XQA"
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="lyrics ?(.*)"))
-async def _(event):
-    await event.edit("wi8..! I am searching your lyrics....`")
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
-    reply = await event.get_reply_message()
-    if event.pattern_match.group(1):
-        query = event.pattern_match.group(1)
-    elif reply.text:
-        query = reply.message
-    else:
-        await event.edit("`What I am Supposed to find `")
-        return
-    song = ""
-    song = Song.find_song(query)
-    if song:
-        if song.lyrics:
-            reply = song.format()
-        else:
-            reply = "Couldn't find any lyrics for that song! try with artist name along with song if still doesnt work try `.glyrics`"
-    else:
-        reply = "lyrics not found! try with artist name along with song if still doesnt work try `.glyrics`"
-    if len(reply) > Config.MAX_MESSAGE_SIZE_LIMIT:
-        with io.BytesIO(str.encode(reply)) as out_file:
-            out_file.name = "lyrics.text"
-            await borg.send_file(
-                event.chat_id,
-                out_file,
-                force_document=True,
-                allow_cache=False,
-                caption=query,
-                reply_to=reply_to_id
-            )
-            await event.delete()
-    else:
-        await event.edit(reply)
-
-
-@borg.on(admin_cmd(outgoing=True, pattern="glyrics ?(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="ly ?(.*)"))
 async def lyrics(lyric):
     if lyric.pattern_match.group(1):
         query = lyric.pattern_match.group(1)
