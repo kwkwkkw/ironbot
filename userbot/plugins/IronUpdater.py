@@ -142,7 +142,7 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@register(outgoing=True, pattern=r"^\.iupdate( now| deploy|$)")
+@register(outgoing=True, pattern=r"^\.update( now| deploy|$)")
 async def upstream(event):
     "Untuk .update command, mengecek apakah ada update"
     await event.edit("`⚙️Memgambil informasi....`")
