@@ -68,7 +68,7 @@ async def get_readable_time(seconds: int) -> str:
  #        "` ---͓̽-͓̽ ͓̽I͓̽R͓̽O͓̽N͓̽-͓̽B͓̽O͓̽T͓̽ ͓̽-͓̽-͓̽--`\n"
   #       "╭━━━━━━━━━━━━━━━━━━━╮\n"
  #       f"┣[•👤 `USER     :` {DEFAULTUSER}\n"
-        f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
+ #       f"┣▰▱▰▱▰▱▰▱▰▱▰▱▰▱\n"
  #       f"┣[•🐍 `Python.  : v.{python_version()}`\n"
  #       f"┣[•⚙️ `Telethon : v.{version.__version__}`\n"
  #       f"┣[•💡 `Base on  : {UPSTREAM_REPO_BRANCH}`\n"
