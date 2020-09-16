@@ -52,6 +52,7 @@ sqlalchemy>=1.2
 telegraph
 tswift
 urbandict>=0.5
+wand
 wikipedia>=1.4.0
 youtube-dl
 covid
