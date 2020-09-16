@@ -201,6 +201,7 @@ COUNT_PM = {}
 LASTMSG = {}
 CMD_HELP = {}
 ISAFK = False
+SUDO_LIST = {}
 AFKREASON = None
 
 
