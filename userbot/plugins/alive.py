@@ -81,8 +81,8 @@ async def get_readable_time(seconds: int) -> str:
 
 
 #@command(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
-@borg.on(admin_cmd(pattern=r"^\.(?:alive|on)\s?(.)?")
-async def amireallyalive(alive):
+@register(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
+async def _(alive):
     chat = await alive.get_chat()
     await alive.delete()
     """ For .alive command, check if the bot is running.  """
