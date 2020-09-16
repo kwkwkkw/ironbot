@@ -1,11 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-# credits to @AvinashReddy3108
-"""
-This module updates the userbot based on upstream revision
-Ported from Kensurbot
-"""
 import asyncio
 import sys
 from os import environ, execle, path, remove
@@ -20,7 +12,7 @@ from userbot.helpers import runss
 HEROKU_APP_NAME = Var.HEROKU_APP_NAME
 HEROKU_API_KEY = Var.HEROKU_API_KEY
 UPSTREAM_REPO_BRANCH = "master"
-UPSTREAM_REPO_URL = "https://github.com/sandy1709/catuserbot"
+UPSTREAM_REPO_URL = "https://github.com/tesbot07/ironbot"
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
@@ -229,7 +221,7 @@ async def upstream(event):
 @borg.on(sudo_cmd(pattern="badcat$", allow_sudo=True))
 async def upstream(event):
     event = await edit_or_reply(event, "`Pulling the bad cat repo wait a sec ....`")
-    off_repo = "https://github.com/Jisan09/catuserbot"
+    off_repo = "https://github.com/tesbot07/ironbot"
     catcmd = f"rm -rf .git"
     try:
         await runcmd(catcmd)
