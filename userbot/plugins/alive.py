@@ -79,7 +79,7 @@ async def get_readable_time(seconds: int) -> str:
 #    await alive.delete()
 
 
-#@command(outgoing=True, pattern="^.alive$")
+#@command(outgoing=True, pattern=r"^\.(?:alive|on)\s?(.)?")
 @borg.on(admin_cmd(pattern=r"alive"))
 async def amireallyalive(alive):
     chat = await alive.get_chat()
