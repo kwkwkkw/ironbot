@@ -78,11 +78,18 @@ async def get_readable_time(seconds: int) -> str:
 #    await bot.send_file(alive.chat_id, IMG, caption=Alive_caption)
 #    await alive.delete()
 
-uptime = await get_readable_time((time.time() - StartTime))
-IMG = Config.ALIVE_IMG
-if IMG is None:
-    IMG = "https://drive.google.com/uc?id=1BWR-nhFNe8oupi-4SoySVEJWn_G6QsaL&export=download"
-   Alive_caption = (
+
+#@command(outgoing=True, pattern="^.alive$")
+@borg.on(admin_cmd(pattern=r"alive"))
+async def amireallyalive(alive):
+    chat = await alive.get_chat()
+    await alive.delete()
+    """ For .alive command, check if the bot is running.  """
+    uptime = await get_readable_time((time.time() - StartTime))
+    IMG = Config.ALIVE_IMG
+    if IMG is None:
+        IMG = "https://drive.google.com/uc?id=1BWR-nhFNe8oupi-4SoySVEJWn_G6QsaL&export=download"
+    Alive_caption = (
          "` ---͓̽-͓̽ ͓̽I͓̽R͓̽O͓̽N͓̽-͓̽B͓̽O͓̽T͓̽ ͓̽-͓̽-͓̽--`\n"
          "╭━━━━━━━━━━━━━━━━━━━╮\n"
         f"┣[•👤 `USER     :` {DEFAULTUSER}\n"
@@ -93,12 +100,6 @@ if IMG is None:
         f"┣[•🕒 `Uptime.  : {uptime}`\n"
         f"╰━━━━━━━━━━━━━━━━━━━╯\n"
     )
-#@command(outgoing=True, pattern="^.alive$")
-@borg.on(admin_cmd(pattern=r"alive"))
-async def amireallyalive(alive):
-    chat = await alive.get_chat()
-    await alive.delete()
-    """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
+    await borg.send_file(alive.chat_id, IMG,caption=Alive_caption)
     await alive.delete() 
 
