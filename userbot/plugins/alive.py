@@ -64,7 +64,7 @@ async def _(alive):
     IMG = Config.ALIVE_IMG
     if IMG is None:
         IMG = "https://drive.google.com/uc?id=1BWR-nhFNe8oupi-4SoySVEJWn_G6QsaL&export=download"
-    caption = (
+    Alive_caption = (
          "` ---͓̽-͓̽ ͓̽I͓̽R͓̽O͓̽N͓̽-͓̽B͓̽O͓̽T͓̽ ͓̽-͓̽-͓̽--`\n"
          "╭━━━━━━━━━━━━━━━━━━━╮\n"
         f"┣[•👤 `USER     :` {DEFAULTUSER}\n"
@@ -75,7 +75,7 @@ async def _(alive):
         f"┣[•🕒 `Uptime.  : {uptime}`\n"
         f"╰━━━━━━━━━━━━━━━━━━━╯\n"
     )
-    await bot.send_file(alive.chat_id, IMG, caption=caption)
+    await bot.send_file(alive.chat_id, IMG, caption=Alive_caption)
     await alive.delete()
 
 
